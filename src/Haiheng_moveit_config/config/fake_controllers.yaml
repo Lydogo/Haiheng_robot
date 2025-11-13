@@ -1,0 +1,26 @@
+controller_list:
+  - name: fake_Left_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - L_SHOULDER_P
+      - L_SHOULDER_R
+      - L_SHOULDER_Y
+      - L_ELBOW_Y
+      - L_WRIST_P
+      - L_WRIST_Y
+      - L_WRIST_R
+  - name: fake_Right_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - R_SHOULDER_P
+      - R_SHOULDER_R
+      - R_SHOULDER_Y
+      - R_ELBOW_Y
+      - R_WRIST_P
+      - R_WRIST_Y
+      - R_WRIST_R
+initial:  # Define initial robot poses per group
+#  - group: Left_arm
+#    pose: home
+
+  []

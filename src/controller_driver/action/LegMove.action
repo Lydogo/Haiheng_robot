@@ -1,0 +1,10 @@
+# LegMove.action
+# Goal
+int16[] target_positions  # 目标位置数组，单位为弧度
+---
+# Result
+bool success               # 指示动作是否成功完成
+string message            # 结果消息，包含错误信息或成功确认
+---
+# Feedback
+int16[] current_positions  # 当前关节位置数组，单位为弧度

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="haiheng-URDF">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="Left_arm">
+        <chain base_link="WAIST_P_S" tip_link="L_WRIST_R_S"/>
+    </group>
+    <group name="Right_arm">
+        <chain base_link="WAIST_P_S" tip_link="R_WRIST_R_S"/>
+    </group>
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="BASE_S"/>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="BASE_S" link2="L_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="L_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="L_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="L_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="NECK_P_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="NECK_R_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="BASE_S" link2="WAIST_R_S" reason="Adjacent"/>
+    <disable_collisions link1="BASE_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="L_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="L_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="L_SHOULDER_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="L_WRIST_P_S" reason="Adjacent"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="L_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="L_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="NECK_P_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_ELBOW_Y_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="L_SHOULDER_R_S" reason="Adjacent"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="L_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="L_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="L_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="L_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="NECK_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="NECK_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="WAIST_P_S" reason="Adjacent"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_P_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="L_SHOULDER_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="L_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="L_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="L_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="NECK_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="NECK_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_R_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="L_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="L_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="L_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="NECK_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="NECK_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_SHOULDER_Y_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="L_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="L_WRIST_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_P_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_R_S" link2="L_WRIST_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="L_WRIST_R_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_R_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="NECK_P_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="L_WRIST_Y_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_P_S" link2="NECK_R_S" reason="Adjacent"/>
+    <disable_collisions link1="NECK_P_S" link2="NECK_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="NECK_P_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_P_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="NECK_P_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="NECK_P_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_P_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="NECK_P_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="NECK_P_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_R_S" link2="NECK_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_R_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="NECK_R_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="NECK_R_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_R_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="NECK_R_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="NECK_R_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_Y_S" link2="R_ELBOW_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_Y_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="NECK_Y_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="NECK_Y_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_Y_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="NECK_Y_S" link2="WAIST_P_S" reason="Adjacent"/>
+    <disable_collisions link1="NECK_Y_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="NECK_Y_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="R_SHOULDER_P_S" reason="Never"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="R_SHOULDER_R_S" reason="Never"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="R_SHOULDER_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="R_WRIST_P_S" reason="Adjacent"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="R_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_ELBOW_Y_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="R_SHOULDER_R_S" reason="Adjacent"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="R_SHOULDER_Y_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="R_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="WAIST_P_S" reason="Adjacent"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_P_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_R_S" link2="R_SHOULDER_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="R_SHOULDER_R_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_R_S" link2="R_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_R_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_R_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_R_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_R_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_Y_S" link2="R_WRIST_P_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_Y_S" link2="R_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_Y_S" link2="R_WRIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_Y_S" link2="WAIST_P_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_Y_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_SHOULDER_Y_S" link2="WAIST_Y_S" reason="Never"/>
+    <disable_collisions link1="R_WRIST_P_S" link2="R_WRIST_R_S" reason="Never"/>
+    <disable_collisions link1="R_WRIST_P_S" link2="R_WRIST_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="R_WRIST_R_S" link2="R_WRIST_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="WAIST_P_S" link2="WAIST_R_S" reason="Never"/>
+    <disable_collisions link1="WAIST_P_S" link2="WAIST_Y_S" reason="Adjacent"/>
+    <disable_collisions link1="WAIST_R_S" link2="WAIST_Y_S" reason="Adjacent"/>
+</robot>

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: haiheng-URDF
+    relative_path: urdf/update_haiheng-URDF.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/haiheng-URDF.srdf
+  CONFIG:
+    author_name: qmk
+    author_email: qiumingkai@seaeverit.com
+    generated_timestamp: 1759128064
