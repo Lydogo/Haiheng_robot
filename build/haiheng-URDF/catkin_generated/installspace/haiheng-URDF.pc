@@ -1,8 +1,0 @@
-prefix=/root/catkin_ws/install
-
-Name: haiheng-URDF
-Description: Description of haiheng-URDF
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
